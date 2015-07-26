@@ -1,0 +1,22 @@
+.page-header
+  = link_to new_picture_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Picture
+  %h1 Listing pictures
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @pictures.each do |picture|
+        %tr
+          %td= picture.name
+          %td= link_to 'Show', picture
+          %td= link_to 'Edit', edit_picture_path(picture)
+          %td= link_to 'Destroy', picture, data: { confirm: 'Are you sure?' }, method: :delete
