@@ -10,3 +10,5 @@
 %dl.dl-horizontal
   %dt Name:
   %dd= @picture.name
+  %dt Thubmnail:
+  %dd= image_tag @picture.thumbnail.url(:medium)

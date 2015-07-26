@@ -12,11 +12,13 @@
         %th
         %th
         %th
+        %th
 
     %tbody
       - @pictures.each do |picture|
         %tr
           %td= picture.name
+          %td= image_tag picture.thumbnail.url(:medium)
           %td= link_to 'Show', picture
           %td= link_to 'Edit', edit_picture_path(picture)
           %td= link_to 'Destroy', picture, data: { confirm: 'Are you sure?' }, method: :delete

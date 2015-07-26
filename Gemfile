@@ -43,6 +43,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'paperclip'
+gem 'dotenv'
+
 gem 'rb-readline'
 
 group :development, :test do
