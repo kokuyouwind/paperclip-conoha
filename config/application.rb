@@ -48,5 +48,18 @@ module PaperclipConoha
         integration_tool: false
       )
     end
+
+    config.paperclip_defaults = {
+      storage: :fog,
+      fog_credentials: {
+        provider: 'OpenStack',
+        openstack_username: ENV['CONOHA_API_USERNAME'],
+        openstack_api_key: ENV['CONOHA_API_PASSWORD'],
+        openstack_auth_url: ENV['CONOHA_API_AUTH_URL'],
+        openstack_tenant: ENV['CONOHA_API_TENANT']
+      },
+      fog_directory: ENV['CONOHA_OBJECT_STORAGE_DIRECTORY'],
+      fog_host: "#{ENV['CONOHA_OBJECT_STORAGE_ENDPOINT']}/#{ENV['CONOHA_OBJECT_STORAGE_DIRECTORY']}"
+    }
   end
 end
